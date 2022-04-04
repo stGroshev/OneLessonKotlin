@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">OneLessonKotlin</string>
+    <string name="button">Button</string>
+    <string name="pressButton">Нажмите кнопку</string>
 </resources>
