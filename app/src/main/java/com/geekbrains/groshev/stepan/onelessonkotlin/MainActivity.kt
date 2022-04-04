@@ -2,10 +2,8 @@ package com.geekbrains.groshev.stepan.onelessonkotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
-import com.geekbrains.groshev.stepan.onelessonkotlin.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,14 +18,14 @@ class MainActivity : AppCompatActivity() {
             count++
             when (count) {
                 1 -> {
-                    textViewParagraph.text = "Пункт 5a"
-                    textView.text = "Вы нажали кнопку " + getEmojiByUnicode(0x1F609)
-                    val test = TestData("Андрей", "Нестеренко")
+                    textViewParagraph.text = getString(R.string.paragraph_5_a)
+                    textView.text = getString(R.string.pressedTheButton) + getEmojiByUnicode(0x1F609)
+                    val test = TestData(getString(R.string.nameTeacher), getString(R.string.surnameTeacher))
                     textViewTwo.text = test.name + " " + test.surname + ","
-                    button.text = "Далее"
+                    button.text = getString(R.string.further)
                 }
                 2 -> {
-                    textViewParagraph.text = "Пункт 5b"
+                    textViewParagraph.text = getString(R.string.paragraph_5_b)
                     textViewTwo.text =
                         "Свойства объекта: a = " + TestTwo.a.toString() + "; b = " + TestTwo.b.toString() + "."
                     val testThree = TestTwo.copy()
@@ -38,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                     textViewParagraph.text = ""
                     textViewTwo.text = ""
                     textView.text = "Пункты из дз закончились" + getEmojiByUnicode(0x1F622)
-                    button.text = "Конец"
+                    button.text = getString(R.string.end)
                 }
             }
         }
@@ -52,5 +50,5 @@ class MainActivity : AppCompatActivity() {
 }
 
 fun getEmojiByUnicode(unicode: Int): String =
-    String(Character.toChars(unicode)) // нашел эту функцию на stackoverflow
+    String(Character.toChars(unicode)) // нашел эту функцию на stackoverflow =)
 
