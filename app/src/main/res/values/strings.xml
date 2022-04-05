@@ -4,7 +4,7 @@
     <string name="pressButton">Нажмите кнопку</string>
     <string name="paragraph_5_a">Пункт 5a</string>
     <string name="paragraph_5_b">Пункт 5b</string>
-    <string name="pressedTheButton">\"Вы нажали кнопку \"</string>
+    <string name="pressedTheButton">\Вы нажали кнопку </string>
     <string name="nameTeacher">Андрей</string>
     <string name="surnameTeacher">Нестеренко</string>
     <string name="further">Далее</string>

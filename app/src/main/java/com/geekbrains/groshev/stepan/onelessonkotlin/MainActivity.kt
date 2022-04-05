@@ -13,19 +13,27 @@ class MainActivity : AppCompatActivity() {
         val textView: TextView = findViewById(R.id.textView)
         val textViewTwo: TextView = findViewById(R.id.textViewTwo)
         val textViewParagraph: TextView = findViewById(R.id.textViewParagraph)
+        textViewParagraph.background = getDrawable(R.color.white)
         var count = 0
         button.setOnClickListener {
             count++
             when (count) {
                 1 -> {
                     textViewParagraph.text = getString(R.string.paragraph_5_a)
-                    textView.text = getString(R.string.pressedTheButton) + getEmojiByUnicode(0x1F609)
-                    val test = TestData(getString(R.string.nameTeacher), getString(R.string.surnameTeacher))
+                    textViewParagraph.background = getDrawable(R.color.liteGrey)
+                    textView.text =
+                        getString(R.string.pressedTheButton) + getEmojiByUnicode(0x1F609)
+                    val test = TestData(
+                        getString(R.string.nameTeacher),
+                        getString(R.string.surnameTeacher)
+                    )
                     textViewTwo.text = test.name + " " + test.surname + ","
+                    textViewTwo.background = getDrawable(R.color.liteGrey)
                     button.text = getString(R.string.further)
                 }
                 2 -> {
                     textViewParagraph.text = getString(R.string.paragraph_5_b)
+                    textViewParagraph.background = getDrawable(R.color.liteGrey)
                     textViewTwo.text =
                         "Свойства объекта: a = " + TestTwo.a.toString() + "; b = " + TestTwo.b.toString() + "."
                     val testThree = TestTwo.copy()
@@ -34,7 +42,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 else -> {
                     textViewParagraph.text = ""
+                    textViewParagraph.background = getDrawable(R.color.white)
                     textViewTwo.text = ""
+                    textViewTwo.background = getDrawable(R.color.white)
                     textView.text = "Пункты из дз закончились" + getEmojiByUnicode(0x1F622)
                     button.text = getString(R.string.end)
                 }
