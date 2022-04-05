@@ -40,13 +40,27 @@ class MainActivity : AppCompatActivity() {
                     textView.text =
                         "Свойства клона: a = " + testThree.a.toString() + "; b = " + testThree.b.toString() + "."
                 }
-                else -> {
+                3 -> {
+                    textViewParagraph.text = getString(R.string.paragraph_5_c)
+                    textViewParagraph.background = getDrawable(R.color.liteGrey)
+                    val numbers: Array<Int> = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+                    var test = ""
+                    var testTwo = ""
+                    numbers.forEach { test = "$test $it" }
+                    textViewTwo.text = "Массив: $test"
+                    numbers.forEach { testTwo = "$testTwo" + it * 2 + " " }
+                    textView.text = "Массив Х2: $testTwo"
+                }
+                4 -> {
                     textViewParagraph.text = ""
                     textViewParagraph.background = getDrawable(R.color.white)
                     textViewTwo.text = ""
                     textViewTwo.background = getDrawable(R.color.white)
                     textView.text = "Пункты из дз закончились" + getEmojiByUnicode(0x1F622)
-                    button.text = getString(R.string.end)
+                    button.text = getString(R.string.exit)
+                }
+                else -> {
+                    finish()
                 }
             }
         }
@@ -55,10 +69,9 @@ class MainActivity : AppCompatActivity() {
     object TestTwo {
         val a = 20
         val b = 30
-        fun copy(a: Int = this.a, b: Int = this.b) = TestTwo
+        fun copy(/*a: Int = this.a, b: Int = this.b*/) = TestTwo
     }
 }
 
 fun getEmojiByUnicode(unicode: Int): String =
     String(Character.toChars(unicode)) // нашел эту функцию на stackoverflow =)
-
